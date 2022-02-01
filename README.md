@@ -1,5 +1,5 @@
 # zookeeper
-
+Key notes and code snippets for studies
 # You can use the `-y` flag to skip the package questionnaire and leave default answers
 npm init -y
 # You can use `npm i` as a shortcut for `npm install`
@@ -20,3 +20,10 @@ Middleware functions can serve many different purposes. Ultimately they allow us
 The express.urlencoded({extended: true}) method is a method built into Express.js. It takes incoming POST data and converts it to key/value pairings that can be accessed in the req.body object. The extended: true option set inside the method call informs our server that there may be sub-array data nested in it as well, so it needs to look as deep into the POST data as possible to parse all of the data correctly.
 
 The express.json() method we used takes incoming POST data in the form of JSON and parses it into the req.body JavaScript object. Both of the above middleware functions need to be set up every time you create a server that's looking to accept POST data.
+
+# 3.4
+```
+app.use(express.static('public'));
+```
+
+We added some more middleware to our server and used the express.static() method. The way it works is that we provide a file path to a location in our application (in this case, the public folder) and instruct the server to make these files static resources. This means that all of our front-end code can now be accessed without having a specific server endpoint created for it!
